@@ -7,3 +7,7 @@ app.get('/api', (req, res) => {
 app.listen(port, () => {
   console.log(`[BACKEND]: listening on port ${port}`);
 });
+
+app.get('/test', (req, res) => {
+  res.json({ message: 'Hello from backend' });
+});
