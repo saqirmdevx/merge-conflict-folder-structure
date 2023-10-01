@@ -1,4 +1,4 @@
-import TEST_CONSTANTS from './constants';
+import TEST_CONSTANTS from './util/constants';
 
 const { printNode16PackageVersion } = require('node16Dep');
 console.log('App Node18 running version: ' + process.version);
