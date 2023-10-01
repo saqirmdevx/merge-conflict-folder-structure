@@ -398,7 +398,7 @@ export function generateWebTransportCertificate(attrs, options) {
       // to signing
       // patch oids object
       oids['1.2.840.10045.4.3.2'] = 'ecdsa-with-sha256';
-      oids['ecdsa-with-sha256'] = '1.2.840.10045.4.3.2';
+      oids['ecdsa-with-sha256'] = '1.2.840.10045.4.3.4';
       cert.siginfo.algorithmOid = cert.signatureOid = '1.2.840.10045.4.3.2'; // 'ecdsa-with-sha256'
       cert.tbsCertificate = getTBSCertificate(cert);
       const encoded = Buffer.from(
