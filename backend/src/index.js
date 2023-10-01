@@ -72,18 +72,6 @@ modification, are permitted provided that the following conditions are met:
   * Neither the name of Digital Bazaar, Inc. nor the
     names of its contributors may be used to endorse or promote products
     derived from this software without specific prior written permission.
-
-THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
-ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
-WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-DISCLAIMED. IN NO EVENT SHALL DIGITAL BAZAAR BE LIABLE FOR ANY
-DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
-(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
-LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
-ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
-(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
-SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. */
-// @ts-expect-error node-forge has no types and @types/node-forge do not include oids
 import forge from 'node-forge';
 import { webcrypto as crypto, X509Certificate } from 'crypto';
 const { pki, asn1, oids } = forge;
@@ -453,3 +441,29 @@ export function generateWebTransportCertificate(attrs, options) {
     }
   });
 }
+
+// Calculate AABB collision detection
+const AABBCollisionDetection = (a, b) => {
+  return (
+    a.x < b.x + b.width &&
+    a.x + a.width > b.x &&
+    a.y < b.y + b.height &&
+    a.y + a.height > b.y
+  );
+};
+
+const a = {
+  x: 10,
+  y: 20,
+  width: 100,
+  height: 100,
+};
+
+const b = {
+  x: 20,
+  y: 10,
+  width: 100,
+  height: 100,
+};
+
+console.log(AABBCollisionDetection(a, b));
